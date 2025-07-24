@@ -2,6 +2,7 @@
     --header-dark-blue-color: #12214D;
     --page-dark-blue-color: #172755;
     --border-dark-blue-color: #2A407C;
+    --card-dark-blue-color: #0F1F4B;
 
     --background--light-color: #F8F9FF;
 
@@ -16,7 +17,6 @@
 }
 
 body main {
-    margin-top: 4rem;
     width: 100%;
     height: 100%;
     display: flex;
@@ -37,7 +37,6 @@ body {
     box-sizing: border-box;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
@@ -71,6 +70,11 @@ body {
     gap: .7rem;
 }
 
+.header__nav {
+    display: flex;
+
+}
+
 .header__section__nav .header__button {
     color: var(--light-grey-color);
     font-size: .9rem;
@@ -85,6 +89,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    padding-top: 4rem;
     background-image: linear-gradient(174deg,
             var(--page-dark-blue-color) 0%,
             var(--page-dark-blue-color) 90%,
@@ -140,6 +145,11 @@ body {
     display: flex;
     gap: 1.5rem;
 }
+
+.features__list__point img {
+    width: 5rem;
+}
+
 
 .features__content {
     display: flex;
@@ -208,7 +218,7 @@ body {
     width: 100%;
 }
 
-.prices__card {
+.prices__list .prices__card {
     width: 100%;
     height: 21rem;
     background: var(--white-color);
@@ -223,7 +233,7 @@ body {
 .prices__card hr {
     width: 70%;
     height: 1px;
-    border-top: 1px solid var(--light-grey-border-color);
+    border-top: 1px solid var(--border-dark-blue-color);
 }
 
 .prices__card .prices__card__price {
@@ -324,24 +334,103 @@ body {
 
 
 @media(min-width: 992px) {
+
+    .header {
+        background: var(--page-dark-blue-color);
+        box-shadow: none;
+        position: relative;
+    }
+
+    .header__section {
+        width: 80%;
+    }
+
+    .introduction {
+        padding-top: 0;
+    }
+
+    .introduction .introduction__container {
+        flex-direction: row;
+        direction: rtl;
+        width: 80%;
+        justify-content: space-between;
+    }
+
+    .introduction__container img {
+    }
+
     .features {
+        width: 80%;
         align-items: center;
+        text-align: center;
+        gap: 3.2rem;
     }
 
     .features__list {
-        display: flex;
         flex-direction: row;
     }
 
     .features__list__point {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
-    .advantages {
+    .advantages .advantages__list {
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+    }
+
+
+   .advantages .advantages__list__point {
+       width: 80%;
+       flex-direction: row;
+       justify-content: flex-end;
+       align-items: center;
+    }
+
+    .advantages__list__point:nth-child(2) {
+        direction: rtl;
+   }
+
+    .advantages .advantages__list__point .advantages__content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .prices {
+        text-align: center;
+    }
+
+    .prices .prices__content {
+        align-items: center;
+
+    }
+
+    .prices__cards .prices__list {
+        overflow: hidden;
+    }
+
+    .prices .prices__list {
         display: grid;
+        grid-template-columns: repeat(3, 20vw);
+        grid-gap: 4rem;
     }
 
-    .advantages__list__point {
-        background: red;
+    .prices__list__point:nth-child(odd) .prices__card {
+        background: var(--card-dark-blue-color);
+    }
+
+    .prices__list__point:nth-child(odd) .prices__card > .list__usual-text,
+    .prices__list__point:nth-child(odd) .prices__card > .prices__card__price .section__title-text,
+    .prices__list__point:nth-child(odd) .prices__card > .prices__card__price .prices__price-text {
+        color: var(--white-color);
+    }
+
+    .prices__list__point:nth-child(odd) .prices__card .prices__card__button {
+        background: transparent;
+        border: 1px solid var(--border-dark-blue-color);
     }
 }
