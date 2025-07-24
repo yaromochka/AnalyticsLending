@@ -1,0 +1,347 @@
+:root {
+    --header-dark-blue-color: #12214D;
+    --page-dark-blue-color: #172755;
+    --border-dark-blue-color: #2A407C;
+
+    --background--light-color: #F8F9FF;
+
+    --white-color: #fff;
+
+    --light-grey-color: #8794BA;
+    --light-grey-border-color: #D3D9E9;
+
+    --bright-pink-color: #EF2A82;
+
+    --breakpoint-lg: 992px;
+}
+
+body main {
+    margin-top: 4rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background--light-color);
+}
+
+body {
+    display: block;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    width: 100%;
+    height: 4rem;
+    background-color: var(--header-dark-blue-color);
+    box-shadow: 0px 4px 4px 0px rgba(18, 33, 77, 1);
+}
+
+.header__section {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__section__logo,
+.header__section__nav {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.header__section__nav .header__button {
+    color: var(--light-grey-color);
+    font-size: .9rem;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+.introduction {
+    display: flex;
+    padding-bottom: 2rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background-image: linear-gradient(174deg,
+            var(--page-dark-blue-color) 0%,
+            var(--page-dark-blue-color) 90%,
+            var(--bright-pink-color) calc(90% + 2px),
+            var(--bright-pink-color) 93%,
+            var(--background--light-color) calc(93% + 1px),
+            var(--background--light-color) 100%);
+}
+
+.introduction img {
+    width: 100%;
+}
+
+.introduction__button {
+    cursor: pointer;
+    width: 100%;
+    height: 2.6rem;
+    border-radius: 2.2rem;
+    color: var(--white-color);
+    background: var(--bright-pink-color);
+    margin-bottom: 4rem;
+}
+
+.introduction__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introduction__content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.features {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    gap: 2rem;
+}
+
+.features__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.features__list__point {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.features__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.advantages {
+    width: 90%;
+    margin-top: 5rem;
+}
+
+.advantages ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding-bottom: 2rem;
+}
+
+.prices {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(-6deg,
+            var(--page-dark-blue-color) 0%,
+            var(--page-dark-blue-color) 88%,
+            var(--bright-pink-color) calc(88% + 5px),
+            var(--bright-pink-color) 92%,
+            var(--background--light-color) calc(92% + 2px),
+            var(--background--light-color) 100%);
+}
+
+.prices__content {
+    padding-top: 6rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.prices__cards .prices__list {
+    display: grid;
+    grid-template-columns: repeat(3, 90%);
+    gap: 1.3rem;
+    padding: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.prices__cards .prices__list>* {
+    scroll-snap-align: center;
+}
+
+.prices__cards .prices__list::-webkit-scrollbar {
+    width: 0;
+}
+
+.prices__cards .prices__list .prices__list__point {
+    display: flex;
+    width: 100%;
+}
+
+.prices__card {
+    width: 100%;
+    height: 21rem;
+    background: var(--white-color);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+}
+
+.prices__card hr {
+    width: 70%;
+    height: 1px;
+    border-top: 1px solid var(--light-grey-border-color);
+}
+
+.prices__card .prices__card__price {
+    display: flex;
+    align-items: center;
+}
+
+
+.prices__card__button {
+    cursor: pointer;
+    width: 80%;
+    height: 2.5rem;
+    border-radius: 10rem;
+    background: var(--bright-pink-color);
+    color: var(--white-color);
+    font-size: .8rem;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding-top: 3rem;
+    background: var(--page-dark-blue-color);
+}
+
+.footer__content {
+    border-top: 1px solid var(--border-dark-blue-color);
+    width: 90%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__content__logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.footer__content__logo .footer__content__title {
+    color: var(--light-grey-color);
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.footer__content__media {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer__content__media img {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+}
+
+
+
+.introduction__title-text, .prices__title-text {
+    color: var(--white-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.section__title-text {
+    color: var(--page-dark-blue-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.prices__price-text {
+    color: var(--page-dark-blue-color);
+    font-size: 3.6rem;
+    font-weight: 700;
+}
+
+.list__usual-text {
+    color: var(--page-dark-blue-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.section__usual-text {
+    color: var(--light-grey-color);
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+.header__logo-text {
+    color: var(--white-color);
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+
+@media(min-width: 992px) {
+    .features {
+        align-items: center;
+    }
+
+    .features__list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .features__list__point {
+        flex-direction: column;
+    }
+
+    .advantages {
+        display: grid;
+    }
+
+    .advantages__list__point {
+        background: red;
+    }
+}
